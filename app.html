@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Appointment Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #0069d9;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0069d9;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #0069d9;
+      font-weight: bold;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #0069d9;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    footer div {
+      flex: 1 1 250px;
+      margin-bottom: 20px;
+    }
+
+    footer h4 {
+      margin-bottom: 10px;
+      border-bottom: 1px solid white;
+      padding-bottom: 5px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .logo {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .bottom-bar {
+      background: #001f3f;
+      text-align: center;
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Book a Doctor Appointment</h1>
+    <p>Your Health, Our Priority</p>
+  </header>
+
+  <div class="form-container">
+    <h2>Appointment Form</h2>
+    <form id="appointmentForm">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="doctor">Select Doctor</label>
+      <select id="doctor" name="doctor" required>
+        <option value="">-- Please choose --</option>
+        <option value="Dr. Smith">Dr. Smith</option>
+        <option value="Dr. Jones">Dr. Jones</option>
+        <option value="Dr. Lee">Dr. Lee</option>
+      </select>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Preferred Time</label>
+      <input type="time" id="time" name="time" required>
+
+      <label for="reason">Reason for Visit</label>
+      <textarea id="reason" name="reason" rows="4"></textarea>
+
+      <button type="submit">Send via WhatsApp</button>
+    </form>
+  </div>
+
+  <footer>
+    <div>
+      <h4>Address</h4>
+      <p>1. Githurai 45, 100 Meters Off Thika Road</p>
+      <p>2. Juja Highpoint, 50 Meters Off Thika Road</p>
+    </div>
+    <div>
+      <h4>Call Us On</h4>
+      <p>Front Desk Githurai 45: 0723-125-258</p>
+      <p>Juja Highpoint: 0757-672-661</p>
+    </div>
+    <div>
+      <h4>Email Us</h4>
+      <p>care@stpetershealthcare.co.ke</p>
+      <p>hr@stpetershealthcare.co.ke</p>
+    </div>
+    <div>
+      <h4>Visiting Hours</h4>
+      <p>6:00 am - 7:00 am</p>
+      <p>12:30 pm - 1:00 pm</p>
+      <p>5:00 pm - 6:00 pm</p>
+    </div>
+    <div>
+      <img src="logo.png" alt="St. Peter’s Logo" class="logo" />
+      <p>St. Peter’s Healthcare is a reputable medical institution providing quality health care services to the people of Nairobi and beyond.</p>
+    </div>
+  </footer>
+
+  <div class="bottom-bar">
+    Copyright © 2024 St. Peter’s Healthcare. Developed by VM Digital Solutions.
+  </div>
+
+  <script>
+    document.getElementById("appointmentForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const fullname = document.getElementById("fullname").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const doctor = document.getElementById("doctor").value;
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+      const reason = document.getElementById("reason").value;
+
+      const message = `*APPOINTMENT REQUEST*\n\n👤 Name: ${fullname}\n📧 Email: ${email}\n📞 Phone: ${phone}\n👨‍⚕️ Doctor: ${doctor}\n📅 Date: ${date}\n🕒 Time: ${time}\n📋 Reason: ${reason || 'N/A'}`;
+      const phoneNumber = "254746268041"; // Change to your clinic's WhatsApp number
+      const encodedMessage = encodeURIComponent(message);
+
+      window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+    });
+  </script>
+
+</body>
+</html>

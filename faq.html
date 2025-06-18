@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ - St. Peter’s Healthcare</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #0069d9;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #0069d9;
+      margin-bottom: 10px;
+    }
+
+    .faq-section {
+      margin-bottom: 40px;
+    }
+
+    .faq {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .faq h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .faq-item {
+      margin: 10px 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .faq-item summary {
+      font-weight: bold;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .booking-section {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .booking-section h3 {
+      color: #0069d9;
+    }
+
+    .booking-section input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .footer {
+      background-color: #003366;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer div {
+      flex: 1 1 250px;
+      margin-bottom: 20px;
+    }
+
+    .footer h4 {
+      margin-bottom: 10px;
+      border-bottom: 1px solid white;
+      padding-bottom: 5px;
+    }
+
+    .footer p {
+      margin: 5px 0;
+    }
+
+    .logo {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .bottom-bar {
+      background: #001f3f;
+      text-align: center;
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Have Any Questions?</h1>
+    <p>Recently Asked Questions</p>
+  </header>
+
+  <div class="container">
+    <section class="faq-section">
+      <h2>Below you find answers to some of the most frequently asked questions.</h2>
+      <p>We are adding most frequently asked questions.</p>
+      <div class="faq">
+        <div class="faq-item">
+          <details>
+            <summary>What services does your hospital offer?</summary>
+            <p>Our Hospital provides a wide range of Medical Services, including but not limited to: Emergency Care, Surgery, Diagnostics, Maternity Services, Pediatrics, and more.</p>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>How do I make an appointment?</summary>
+            <p>You can book online through our website or call our front desk to schedule an appointment.</p>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Do you have a dedicated Emergency Department?</summary>
+            <p>Yes, we have a 24/7 emergency department with trained personnel and modern equipment.</p>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>What insurance plans do you accept?</summary>
+            <p>We accept NHIF and most major insurance providers. Please contact us for more details.</p>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Is there parking available at the hospital?</summary>
+            <p>Yes, we have designated parking areas for patients and visitors. Our parking facilities are conveniently located near the main entrance.</p>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Do you have specialized clinics or departments?</summary>
+            <p>Yes, we have specialized clinics including Maternity, Pediatrics, Dermatology, Surgery, and more.</p>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>How do I get to your hospital?</summary>
+            <p>We are located in Githurai 45 and Juja Highpoint, easily accessible via Thika Road.</p>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Can I request a second opinion from another doctor at your hospital?</summary>
+            <p>Yes, you may request a second opinion from our qualified specialists for any diagnosis or treatment.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-section">
+      <h3>Book An Appointment</h3>
+      <p>Please feel welcome to contact our friendly reception staff with any general or medical enquiry. Our doctors will receive or return any urgent calls.</p>
+      <form onsubmit="sendWhatsApp(event)">
+        <input type="text" id="name" placeholder="Name" required />
+        <input type="tel" id="phone" placeholder="Phone" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="date" id="date" required />
+        <input type="time" id="time" required />
+        <input type="submit" value="Submit via WhatsApp" style="background:#25D366; color:white; border:none; cursor:pointer;" />
+      </form>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <h4>Address</h4>
+      <p>1. Githurai 45, 100 Meters Off Thika Road</p>
+      <p>2. Juja Highpoint, 50 Meters Off Thika Road</p>
+    </div>
+    <div>
+      <h4>Call Us On</h4>
+      <p>Front Desk Githurai 45: 0723-125-258</p>
+      <p>Juja Highpoint: 0757-672-661</p>
+    </div>
+    <div>
+      <h4>Email Us</h4>
+      <p>care@stpetershealthcare.co.ke</p>
+      <p>hr@stpetershealthcare.co.ke</p>
+    </div>
+    <div>
+      <h4>Visiting Hours</h4>
+      <p>6:00 am - 7:00 am</p>
+      <p>12:30 pm - 1:00 pm</p>
+      <p>5:00 pm - 6:00 pm</p>
+    </div>
+    <div>
+      <img src="logo.png" alt="St. Peter’s Logo" class="logo" />
+      <p>St. Peter’s Healthcare is a reputable medical institution providing quality health care services to the people of Nairobi and beyond.</p>
+    </div>
+  </footer>
+
+  <div class="bottom-bar">
+    Copyright © 2024 St. Peter’s Healthcare. Developed by VM Digital Solutions.
+  </div>
+
+  <script>
+    function sendWhatsApp(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+
+      const message = `*Appointment Request - St. Peter’s Healthcare*%0A
+*Name:* ${name}%0A
+*Phone:* ${phone}%0A
+*Email:* ${email}%0A
+*Date:* ${date}%0A
+*Time:* ${time}%0A`;
+
+      const phoneNumber = "254723125258"; // Githurai WhatsApp
+
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - Hospital System</title>
+  <style>
+    :root {
+      --primary-color: #0056b3;
+      --secondary-color: #007bff;
+      --accent-color: #007bff;
+      --bg-color: #f0f8ff;
+      --text-color: #212121;
+      --button-text-color: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-container {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 90%;
+      padding: 30px;
+      margin: 40px auto;
+    }
+
+    .contact-container h1 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .contact-container p {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form label {
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid var(--secondary-color);
+      border-radius: 5px;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background: var(--accent-color);
+      color: var(--button-text-color);
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    footer div {
+      flex: 1 1 250px;
+      margin-bottom: 20px;
+    }
+
+    footer h4 {
+      margin-bottom: 10px;
+      border-bottom: 1px solid white;
+      padding-bottom: 5px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .logo {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .bottom-bar {
+      background: #001f3f;
+      text-align: center;
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .call-button {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      z-index: 1000;
+      width: 60px;
+      height: 60px;
+      background-color: #007bff;
+      border-radius: 50%;
+      padding: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .call-button img {
+      width: 100%;
+      height: auto;
+    }
+
+    .call-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <p>If you have any questions or need assistance, please reach out to us.</p>
+    <form class="contact-form" id="contactForm" autocomplete="off">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+      <button type="button" id="whatsappButton">Send via WhatsApp</button>
+    </form>
+  </div>
+
+  <!-- Floating call button -->
+  <a href="tel:+254746268041" class="call-button" title="Call Us">
+    <img src="call.png" alt="Call Us">
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h4>Address</h4>
+      <p>1. Githurai 45, 100 Meters Off Thika Road</p>
+      <p>2. Juja Highpoint, 50 Meters Off Thika Road</p>
+    </div>
+    <div>
+      <h4>Call Us On</h4>
+      <p>Front Desk Githurai 45: 0723-125-258</p>
+      <p>Juja Highpoint: 0757-672-661</p>
+    </div>
+    <div>
+      <h4>Email Us</h4>
+      <p>care@stpetershealthcare.co.ke</p>
+      <p>hr@stpetershealthcare.co.ke</p>
+    </div>
+    <div>
+      <h4>Visiting Hours</h4>
+      <p>6:00 am - 7:00 am</p>
+      <p>12:30 pm - 1:00 pm</p>
+      <p>5:00 pm - 6:00 pm</p>
+    </div>
+    <div>
+      <img src="logo.png" alt="St. Peter’s Logo" class="logo" />
+      <p>St. Peter’s Healthcare is a reputable medical institution providing quality health care services to the people of Nairobi and beyond.</p>
+    </div>
+  </footer>
+
+  <div class="bottom-bar">
+    Copyright © 2024 St. Peter’s Healthcare. Developed by VM Digital Solutions.
+  </div>
+
+  <script>
+    document.getElementById('whatsappButton').addEventListener('click', function () {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !phone || !message) {
+        alert("Please fill in all fields before sending.");
+        return;
+      }
+
+      const text = encodeURIComponent(
+        `Contact Request:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`
+      );
+
+      const whatsappNumber = "254746268041";
+      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${text}`;
+      window.open(whatsappLink, '_blank');
+
+      alert("Details sent successfully!");
+
+      document.getElementById('contactForm').reset();
+    });
+  </script>
+
+</body>
+</html>

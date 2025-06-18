@@ -1,0 +1,394 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ST PETER'S HEALTHCARE</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #007bff;
+    }
+
+    header {
+      background: #007bff;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .top-contact {
+      font-size: 14px;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background: white;
+    }
+
+    .branding img {
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    .branding h1 {
+      margin: 0;
+      color: #007bff;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .hero {
+      position: relative;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    .hero h2 {
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 22px;
+      color: #007bff;
+    }
+
+    .hero a button {
+      margin-top: 15px;
+      padding: 8px 16px;
+      font-size: 14px;
+      background: gold;
+      border: none;
+      color: #007bff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .noticeboard {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: yellow;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      border: none;
+    }
+
+    .about-section, .clinics-section {
+      display: flex;
+      justify-content: space-between;
+      background: white;
+      padding: 40px 20px;
+    }
+
+    .about-section .text, .clinics-section .text {
+      width: 50%;
+    }
+
+    .about-section img, .clinics-section img {
+      width: 45%;
+      height: auto;
+    }
+
+    .specialties-section {
+      background: white;
+      padding: 40px 20px;
+    }
+
+    .specialties-section h3, .recommendation-section h3 {
+      text-align: center;
+      color: #007bff;
+    }
+
+    .scrolling-container {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .scrolling-images {
+      display: inline-block;
+      animation: scroll-left 30s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .scrolling-images div {
+      display: inline-block;
+      width: 200px;
+      margin-right: 20px;
+      vertical-align: top;
+    }
+
+    .scrolling-images img {
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .scrolling-images p {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .recommendation-section {
+      padding: 40px 20px;
+      background-image: url('mert.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .quotes {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .quote-box {
+      width: 200px;
+      background: rgba(255, 255, 255, 0.7);
+      color: #007bff;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .quote-box::before {
+      content: "⭐️⭐️⭐️⭐️⭐️ ";
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .partners {
+      background: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .partners img {
+      height: 40px;
+      margin: 10px;
+    }
+
+    .footer {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer div {
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+    }
+
+    .social-icons {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .social-icons img {
+      margin: 0 8px;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    .copyright {
+      background: #0056b3;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      width: 55px;
+      height: 55px;
+      bottom: 30px;
+      right: 20px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .whatsapp-float img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-contact">
+      Githurai : 0746268041 | Email: peterhealthcare@gmail.com | Website: care@stpetermedical.co.ke
+    </div>
+  </header>
+
+  <div class="branding">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <h1>ST PETER'S HEALTHCARE</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="ser.html">Services</a></li>
+        <li><a href="doc.html">Doctors</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="cont.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="hero" id="hero">
+    <h2>Comprehensive healthcare services and maternity services.<br><br>
+    St Peter's Healthcare - we are committed to your well-being.</h2>
+    <a href="app.html"><button>Book Appointment</button></a>
+    <a href="notice.html"><button class="noticeboard">Noticeboard</button></a>
+  </div>
+
+  <div class="about-section">
+    <div class="text">
+      <h3>About Us</h3>
+      <p>We provide quality healthcare to all patients. At St Peter's Healthcare, our mission is to offer affordable, compassionate, and expert medical services tailored to meet individual needs.</p>
+    </div>
+    <img src="mert.jpg" alt="Maternity Services">
+  </div>
+
+  <div class="clinics-section">
+    <img src="clinic.jpg" alt="Special Clinics">
+    <div class="text">
+      <h3>Special Clinics</h3>
+      <p>
+        We are committed to providing the highest quality healthcare services to our patients. Our special clinics are staffed by experienced healthcare professionals who are dedicated to providing compassionate and personalized care.
+      </p>
+      <ul>
+        <li>Obstetrics & Gynecology</li>
+        <li>Surgicals</li>
+        <li>Dermatology</li>
+        <li>Physician</li>
+        <li>E.N.T Clinics</li>
+        <li>Eye Clinics</li>
+        <li>Orthopedic</li>
+      </ul>
+      <p><strong>Don’t hesitate, contact us for better help and services. Call Us Now</strong></p>
+    </div>
+  </div>
+
+  <div class="specialties-section">
+    <h3>Our Specialties</h3>
+    <p style="text-align: center; max-width: 700px; margin: auto;">
+      Explore Our Main Services. Our excellent team is ready to be part of your journey across different areas of diagnosis and treatment. Scientists helping society for better lives.
+    </p>
+    <div class="scrolling-container">
+      <div class="scrolling-images">
+        <div><img src="pharm.jpg" alt="Pharmacy"><p>Pharmacy Services</p></div>
+        <div><img src="lab.jpg" alt="Lab"><p>Laboratory Services</p></div>
+        <div><img src="clinic.jpg" alt="Clinic"><p>Outpatient Clinic</p></div>
+        <div><img src="mert.jpg" alt="Maternity"><p>Maternity Ward</p></div>
+        <div><img src="pharm.jpg" alt="Pharmacy"><p>Pharmacy Services</p></div>
+        <div><img src="lab.jpg" alt="Lab"><p>Laboratory Services</p></div>
+        <div><img src="clinic.jpg" alt="Clinic"><p>Outpatient Clinic</p></div>
+        <div><img src="mert.jpg" alt="Maternity"><p>Maternity Ward</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="recommendation-section">
+    <h3>What People Say</h3>
+    <div class="quotes">
+      <div class="quote-box">"Excellent care and friendly staff!"</div>
+      <div class="quote-box">"Highly recommend their maternity services."</div>
+      <div class="quote-box">"Clean and organized facilities."</div>
+      <div class="quote-box">"Great specialists in dermatology."</div>
+      <div class="quote-box">"Very responsive and caring team."</div>
+    </div>
+  </div>
+
+  <div class="partners">
+    <img src="sha.png" alt="SHA">
+    <img src="mpesa.png" alt="MPESA">
+    <img src="nhif.png" alt="NHIF">
+  </div>
+
+  <div class="footer">
+    <div><p><strong>Address:</strong><br> Githurai, Nairobi, Kenya</p></div>
+    <div><p><strong>Call Us:</strong><br> 0746268041<br><strong>Hours:</strong> 8am–6pm</p></div>
+    <div><p><strong>Email:</strong><br> peterhealthcare@gmail.com</p></div>
+  </div>
+
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+    <a href="https://twitter.com" target="_blank"><img src="twitter.png" alt="Twitter"></a>
+    <a href="https://instagram.com" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+    <a href="mailto:peterhealthcare@gmail.com"><img src="email.png" alt="Email"></a>
+  </div>
+
+  <div class="copyright">
+    &copy; 2025 ST PETER'S HEALTHCARE. All Rights Reserved.
+  </div>
+
+  <a href="https://wa.me/254746268041" class="whatsapp-float" target="_blank">
+    <img src="whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <script>
+    const hero = document.getElementById('hero');
+    const images = ['zeva.jpg', 'bac.jpg'];
+    let current = 0;
+    hero.style.backgroundImage = `url('${images[current]}')`;
+
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      hero.style.backgroundImage = `url('${images[current]}')`;
+    }, 3000);
+  </script>
+</body>
+</html>
